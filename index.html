@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title and Meta -->
+  <title>Ricardo Caetano | Software Engineer | Integrations Specialist | Python, Django, Flask, FastAPI</title>
+  <meta name="description"
+    content="Ricardo Caetano, Python integration specialist. Django, Flask, FastAPI, REST, GraphQL, and RPC. Experienced in backend development, API design, and system integrations.">
+  <meta name="keywords"
+    content="Ricardo Caetano, Python, integration, specialist, Django, Flask, FastAPI, REST, GraphQL, RPC, backend, development, programming, software, engineering">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ricardo Caetano | Software Engineer">
+  <meta property="og:description"
+    content="Ricardo Caetano, Python integration specialist.  Django, Flask, FastAPI, REST, GraphQL, and RPC. Experienced in backend development, API design, and system integrations.">
+  <meta property="og:image" content="URL_to_preview_image">
+  <meta property="og:url" content="https://www.ricardocaetano.pt">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+
+  <!-- Structured Data (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ricardo Caetano",
+    "jobTitle": "Software Engineer",
+    "url": "https://www.ricardocaetano.pt",
+    "sameAs": [
+      "https://www.linkedin.com/in/ricardo-filipe-caetano/"
+    ],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "ATEC"
+    }
+  }
+  </script>
+
+
+  <style>
+    :root {
+      --bg: #f8f8fa;
+      --fg: #1a1a24;
+      --accent: #090964;
+      --card-bg: #ffffff;
+      --border: rgba(0, 0, 0, 0.1);
+    }
+
+    /* DARK MODE VARIABLES */
+    body.dark {
+      --bg: #121216;
+      --fg: #f2f2f5;
+      --accent: #6d79ff;
+      --card-bg: #1b1c22;
+      --border: rgba(255, 255, 255, 0.15);
+    }
+
+    /* ANIMATED THEME TRANSITION */
+    * {
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: Inter, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    body,
+    * {
+      cursor: default;
+    }
+
+    a,
+    a * {
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 12px 26px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin-top: 12px;
+      font-size: 20px;
+      opacity: 0.75;
+    }
+
+    .subtitle2 {
+      font-size: 18px;
+      opacity: 0.8;
+      margin-top: 8px;
+    }
+
+    .subtitle3 {
+      font-size: 15px;
+      opacity: 0.65;
+      margin-top: 6px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 48px;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .symbol {
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.25);
+      /* Light mode */
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+    body.dark .card {
+      background: rgba(20, 20, 25, 0.35);
+      /* Dark frosted glass */
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--accent);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      width: 92%;
+      text-align: center;
+    }
+
+    .time-periods {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-top: 4px;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.5;
+      margin: 12px 0 0;
+    }
+
+    .tech {
+      margin-top: 12px;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--accent);
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .card a img {
+      width: 120px;
+      height: 50px;
+      object-fit: contain;
+      margin-top: 14px;
+      opacity: 0.8;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+      border-radius: 6px;
+      padding: 4px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .card a img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(78, 93, 255, 0.6);
+      opacity: 1;
+    }
+
+    footer {
+      margin: 80px 0 30px;
+      font-size: 14px;
+      opacity: 0.7;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    footer a {
+      color: var(--fg);
+    }
+
+    footer img {
+      width: 20px;
+      height: 20px;
+    }
+
+
+
+    /* FLOATING THEME BUTTON */
+    #mode-toggle {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--fg);
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      transition: transform 0.25s ease, background-color 0.3s ease;
+      z-index: 999;
+    }
+
+    #mode-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    #boids-btn {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      width: 98px;
+      z-index: 999;
+      padding: 6px 10px;
+      background: linear-gradient(145deg, #1b2a3b, #0f1a28);
+      color: #e0f0ff;
+      font-weight: 500;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0px 0px 8px rgba(180, 185, 192, 0.6);
+      transition: all 0.2s ease;
+    }
+
+    #boids-btn:hover {
+      background: linear-gradient(145deg, #2a3b55, #1b2a3b);
+      transform: translateY(-2px);
+      box-shadow: 0px 4px 18px rgba(180, 185, 192, 0.9);
+    }
+
+    #boids-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @media (max-width: 850px) {
+      .card {
+        margin: 0px 24px;
+      }
+      #boids-btn {
+        display: none;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="boids-canvas"></canvas>
+
+  <header>
+    <h1>Ricardo Caetano</h1>
+    <p class="subtitle">Computer Systems’ Technologies & Programming</p>
+    <p class="subtitle2">Python | Django | Flask | FastAPI</p>
+    <p class="subtitle3">REST | GraphQL | RPC</p>
+  </header>
+
+  <main>
+
+    <!-- EDUCATION -->
+    <section class="section">
+      <h2 class="symbol">
+        <svg width="90" height="90" viewBox="0 0 90 90" fill="var(--fg)" xmlns="http://www.w3.org/2000/svg">
+          <!-- head -->
+          <circle cx="45" cy="18" r="10" />
+          <!-- body -->
+          <line x1="45" y1="28" x2="48" y2="52" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <!-- legs -->
+          <line x1="48" y1="52" x2="30" y2="75" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <line x1="48" y1="52" x2="60" y2="75" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <!-- arms -->
+          <line x1="48" y1="38" x2="28" y2="48" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <line x1="48" y1="38" x2="28" y2="28" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <!-- backpack -->
+          <rect x="56" y="36" width="5" height="15" rx="2" />
+          <rect x="48" y="32" width="10" height="20" rx="3" />
+          <line x1="48" y1="36" x2="56" y2="36" stroke=var(--bg) stroke-width="1" stroke-linecap="round" />
+        </svg>
+      </h2>
+
+      <div class="card">
+        <h3>CET (EQF 5)</h3>
+        <div class="time-periods">2021</div>
+        <p>Completed a 1900 hour full-stack course focused on building information systems.</p>
+        <p>Designed databases and created web and mobile applications.</p>
+        <p>Implemented system integration architectures and selected appropriate technologies.</p>
+        <p class="tech">Debian C C++ C# VisualStudio Xamarin HTML CSS JS VUE PHP LARAVEL SQL</p>
+        <a href="https://www.atec.pt/" target="_blank" rel="noopener noreferrer">
+          <img src="./assets/logos/atec.png" alt="ATEC Logo" />
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>CCP (Certificado de Competências Pedagógicas)</h3>
+        <div class="time-periods">2025</div>
+        <p>Achieved the Portuguese pedagogical certification required to teach and deliver professional training.</p>
+        <p>Developed skills in training methodologies, session planning, assessment strategies, and classroom
+          management.</p>
+        <p>Credential ID F778288/2025</p>
+        <p class="tech">Moodle Teams Sway Padlet Mentimeter</p>
+        <div>
+          <a href="https://netforce.iefp.pt/" target="_blank">
+            <img class="theme-img" src="./assets/logos/cesae.svg" data-light="./assets/logos/cesae.svg"
+              data-dark="./assets/logos/cesae.png" alt="Cesae Logo" />
+          </a>
+          <a href="https://netforce.iefp.pt/" target="_blank">
+            <img src="./assets/logos/netforce.png" alt="Netforce Logo" />
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- WORK -->
+    <section class="section">
+      <h2 class="symbol">
+        <svg width="90" height="90" viewBox="0 0 90 90" fill="var(--fg)" xmlns="http://www.w3.org/2000/svg">
+          <!-- head -->
+          <circle cx="40" cy="19" r="10" />
+          <!-- body -->
+          <line x1="42" y1="28" x2="45" y2="52" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <!-- legs -->
+          <line x1="45" y1="52" x2="36" y2="75" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <line x1="45" y1="52" x2="60" y2="75" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <!-- arms -->
+          <line x1="42" y1="38" x2="28" y2="48" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <line x1="42" y1="38" x2="56" y2="48" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <!-- briefcase -->
+          <rect x="48" y="53" width="18" height="14" rx="2" />
+          <rect x="52" y="47" width="10" height="6" rx="1" />
+          <rect x="54" y="49" width="6" height="2" rx="1" fill=var(--bg) />
+        </svg>
+      </h2>
+
+      <div class="card">
+        <h3>Software Engineer</h3>
+        <div class="time-periods">2022 - 2025</div>
+        <p>Built and maintained integrations for high-performance gaming platforms.</p>
+        <p>Designed documented APIs for internal and external service communication.</p>
+        <p>Contributed to internal tools and game prototyping.</p>
+        <p class="tech">Linux Python Django PostgreSQL Docker FastAPI Godot</p>
+        <a href="https://fabamaq.com/" target="_blank">
+          <img src="./assets/logos/fabamaq.png" alt="Fabamaq Logo" />
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Backend Developer Intern</h3>
+        <div class="time-periods">2022</div>
+        <p>Created ETL jobs to collect and structure data from multiple sources into a star-schema database.</p>
+        <p>Developed analytical queries using BI tools to support product needs.</p>
+        <p>Wrote unit and functional tests for ETL pipeline reliability.</p>
+        <p class="tech">Python Flask Pandas Numpy Airflow PostgreSQL Metabase Docker JIRA</p>
+        <a href="https://infraspeak.com/" target="_blank">
+          <img class="theme-img" src="./assets/logos/infraspeak_original.png"
+            data-light="./assets/logos/infraspeak_original.png" data-dark="./assets/logos/infraspeak.png"
+            alt="Infraspeak Logo" />
+        </a>
+      </div>
+    </section>
+
+    <!-- HOBBIES -->
+    <section class="section">
+      <h2 class="symbol">
+        <svg width="90" height="90" viewBox="0 0 90 90" fill="var(--fg)" xmlns="http://www.w3.org/2000/svg">
+          <!-- head -->
+          <circle cx="40" cy="23" r="10" />
+          <!-- body -->
+          <line x1="45" y1="30" x2="45" y2="55" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <!-- legs -->
+          <line x1="45" y1="55" x2="30" y2="78" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <line x1="45" y1="55" x2="60" y2="78" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <!-- arm covering face -->
+          <line x1="45" y1="35" x2="65" y2="25" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <!-- other arm stretched out -->
+          <line x1="45" y1="35" x2="30" y2="35" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+          <line x1="30" y1="35" x2="50" y2="20" stroke="var(--fg)" stroke-width="5" stroke-linecap="round" />
+        </svg>
+
+      </h2>
+      <div class="card">
+        <h3>Leonardo 2022</h3>
+        <div class="time-periods">2021 - 2022</div>
+        <p>A 2D side scrolling platformer featuring my son as the main character.</p>
+        <p>Built in Godot, featuring classical music as soundtrack.</p>
+        <p>Gather coins, step on enemies, reach the final boss... All the classics.</p>
+        <p class="tech" style="width: 80%;">GODOT PhotoShop Audacity HTML CSS JS</p>
+        <a href="https://www.jogodoleonardo.pt" target="_blank">
+          <img src="./assets/logos/sword_icon.png" alt="Leonardo 2022 Logo" />
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <img src="./assets/logos/linkedin.png" alt="LinkedIn Logo" />
+    <a href="https://www.linkedin.com/in/ricardo-filipe-caetano/" target="_blank" rel="noopener noreferrer">
+      Ricardo Caetano © <span id="year"></span>
+    </a>
+  </footer>
+
+  <button id="mode-toggle">⚫️</button>
+  <button id="boids-btn">
+    <div>Bored?</div>
+    <div style="margin-top: 8px;">Chase down some bugs!</div>
+  </button>
+
+  <script>
+    // Update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById("mode-toggle");
+
+    const toggleBtn = document.getElementById('boids-btn');
+
+
+    function applyTheme(mode) {
+      if (mode === "dark") {
+        document.body.classList.add("dark");
+        toggle.textContent = "⚪️";
+        toggleBtn.style.display = window.innerWidth > 850 ? "block" : "none";
+      } else {
+        document.body.classList.remove("dark");
+        toggle.textContent = "⚫️";
+        toggleBtn.style.display = "none";
+
+      }
+    }
+
+    // Swap images based on theme
+    function updateThemeImages() {
+      const dark = document.body.classList.contains("dark");
+      document.querySelectorAll(".theme-img").forEach(img => {
+        img.src = dark ? img.dataset.dark : img.dataset.light;
+      });
+    }
+
+    // Toggle event
+    toggle.addEventListener("click", () => {
+      const isDark = document.body.classList.toggle("dark");
+      applyTheme(isDark ? "dark" : "light");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      updateThemeImages();
+    });
+
+    // Load stored theme on page load
+    const saved = localStorage.getItem("theme") || "light";
+    applyTheme(saved);
+    updateThemeImages();
+
+
+    // ====================================================
+    // BOIDS
+    // ====================================================
+
+    // ====================================================
+    // CONFIG
+    // ====================================================
+    const config = {
+      count: 42,
+      maxSpeed: 2,
+      maxForce: 0.005,
+      perception: 50,
+      returnForce: 0.15,
+      size: 6,
+      perlinWeight: 0.02,
+      predatorSize: 12,
+      predatorSpeed: 1.5,
+      predatorForce: 0.05,
+      predatorDetect: 200
+    };
+
+    // ====================================================
+    // BEHAVIOR VARIABLES
+    // ====================================================
+    const SEPARATION_WEIGHT = 1.5;
+    const ALIGNMENT_WEIGHT = 5;
+    const COHESION_WEIGHT = 0.2;
+    const PREDATOR_AVOID_WEIGHT = 0.05;
+
+    const DESIRED_SEPARATION = 50;
+    const NEIGHBOR_DIST = 100;
+
+    const MAX_SPEED = config.maxSpeed;
+    const MAX_FORCE = config.maxForce;
+
+    // ====================================================
+    // PERLIN NOISE SETTINGS
+    // ====================================================
+    const NOISE_SCALE = 0.005;
+    const NOISE_FORCE = config.perlinWeight;
+
+    // ====================================================
+    // Simple Perlin noise
+    // ====================================================
+    const Perlin = {
+      grad: [],
+      init() { for (let i = 0; i < 512; i++) this.grad[i] = Math.random() * 2 - 1; },
+      noise(x, y) {
+        const X = Math.floor(x) & 255;
+        const Y = Math.floor(y) & 255;
+        const xf = x - Math.floor(x);
+        const yf = y - Math.floor(y);
+        const tl = this.grad[X + Y];
+        const tr = this.grad[X + 1 + Y];
+        const bl = this.grad[X + Y + 1];
+        const br = this.grad[X + 1 + Y + 1];
+        const u = xf * xf * (3 - 2 * xf);
+        const v = yf * yf * (3 - 2 * yf);
+        const x1 = tl * (1 - u) + tr * u;
+        const x2 = bl * (1 - u) + br * u;
+        return x1 * (1 - v) + x2 * v;
+      }
+    };
+    Perlin.init();
+
+    // ====================================================
+    // CANVAS SETUP
+    // ====================================================
+    const canvas = document.getElementById("boids-canvas");
+    const ctx = canvas.getContext("2d");
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    resize();
+    window.addEventListener("resize", resize);
+
+
+
+    // ====================================================
+    // MOUSE AS PREDATOR
+    // ====================================================
+    const mouse = { x: -9999, y: -9999 };
+    window.addEventListener("mousemove", e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    const predator = {
+      position: mouse,
+      update() { },
+      draw() { }
+    };
+
+    // ====================================================
+    // UTILITY FUNCTIONS
+    // ====================================================
+    function keepInBounds(body, margin = 0) {
+      let fx = 0, fy = 0;
+      if (body.position.x < -margin) fx = config.returnForce;
+      else if (body.position.x > canvas.width + margin) fx = -config.returnForce;
+      if (body.position.y < -margin) fy = config.returnForce;
+      else if (body.position.y > canvas.height + margin) fy = -config.returnForce;
+      body.velocity.x += fx;
+      body.velocity.y += fy;
+    }
+
+    function steerToward(currentVelocity, desiredVector, maxSpeed, maxForce, weight = 1) {
+      const mag = Math.hypot(desiredVector.x, desiredVector.y);
+      if (mag === 0) return { x: 0, y: 0 };
+
+      const desired = { x: (desiredVector.x / mag) * maxSpeed, y: (desiredVector.y / mag) * maxSpeed };
+      let steer = { x: desired.x - currentVelocity.x, y: desired.y - currentVelocity.y };
+
+      const steerMag = Math.hypot(steer.x, steer.y);
+      if (steerMag > maxForce) { steer.x = (steer.x / steerMag) * maxForce; steer.y = (steer.y / steerMag) * maxForce; }
+
+      steer.x *= weight; steer.y *= weight;
+      return steer;
+    }
+
+    function limitVector(vector, max) {
+      const mag = Math.hypot(vector.x, vector.y);
+      if (mag > max) { vector.x = (vector.x / mag) * max; vector.y = (vector.y / mag) * max; }
+    }
+
+    // ====================================================
+    // BOID CLASS
+    // ====================================================
+    class Boid {
+      constructor() {
+        this.position = { x: Math.random() * canvas.width, y: Math.random() * canvas.height };
+        const angle = Math.random() * Math.PI * 2;
+        this.velocity = { x: Math.cos(angle), y: Math.sin(angle) };
+        this.acceleration = { x: 0, y: 0 };
+        this.noiseOffsetX = Math.random() * 10000;
+        this.noiseOffsetY = Math.random() * 10000;
+      }
+
+      update() {
+        this.velocity.x += this.acceleration.x;
+        this.velocity.y += this.acceleration.y;
+        limitVector(this.velocity, MAX_SPEED);
+
+        this.position.x += this.velocity.x;
+        this.position.y += this.velocity.y;
+
+        this.acceleration.x = 0; this.acceleration.y = 0;
+        keepInBounds(this, 10);
+      }
+
+      applyForce(f) { this.acceleration.x += f.x; this.acceleration.y += f.y; }
+
+      steer(vector, weight) { this.applyForce(steerToward(this.velocity, vector, MAX_SPEED, MAX_FORCE, weight)); }
+
+      behave(boids, predator) {
+        let align = { x: 0, y: 0 }, cohesion = { x: 0, y: 0 }, separation = { x: 0, y: 0 };
+        let total = 0;
+
+        for (const other of boids) {
+          if (other === this) continue;
+          const dx = this.position.x - other.position.x;
+          const dy = this.position.y - other.position.y;
+          const d = Math.hypot(dx, dy);
+          if (d < NEIGHBOR_DIST) {
+            align.x += other.velocity.x; align.y += other.velocity.y;
+            cohesion.x += other.position.x; cohesion.y += other.position.y;
+            if (d < DESIRED_SEPARATION) { separation.x += dx / (d * d); separation.y += dy / (d * d); }
+            total++;
+          }
+        }
+
+        if (total > 0) {
+          align.x /= total; align.y /= total;
+          cohesion.x = (cohesion.x / total - this.position.x);
+          cohesion.y = (cohesion.y / total - this.position.y);
+
+          this.steer(align, ALIGNMENT_WEIGHT);
+          this.steer(cohesion, COHESION_WEIGHT);
+          this.steer(separation, SEPARATION_WEIGHT);
+        }
+
+        // Avoid mouse predator
+        const dx = this.position.x - predator.position.x;
+        const dy = this.position.y - predator.position.y;
+        const dist = Math.hypot(dx, dy);
+        if (dist < config.predatorDetect) {
+          this.applyForce({
+            x: (dx / dist) * PREDATOR_AVOID_WEIGHT,
+            y: (dy / dist) * PREDATOR_AVOID_WEIGHT
+          });
+        }
+
+        // Perlin wander
+        const nx = Perlin.noise(this.noiseOffsetX, this.noiseOffsetX + 1000);
+        const ny = Perlin.noise(this.noiseOffsetY, this.noiseOffsetY + 1000);
+        this.noiseOffsetX += NOISE_SCALE; this.noiseOffsetY += NOISE_SCALE;
+        this.applyForce({ x: nx * NOISE_FORCE, y: ny * NOISE_FORCE });
+
+        const t = performance.now() * 0.002 + this.noiseOffsetX;
+        this.applyForce({
+          x: Math.sin(t) * 0.02,
+          y: Math.cos(t) * 0.02
+        });
+
+      }
+
+
+
+
+
+      draw() {
+        const baseAngle = Math.atan2(this.velocity.y, this.velocity.x);
+        ctx.save();
+        ctx.translate(this.position.x, this.position.y);
+        ctx.rotate(baseAngle);
+
+        const length = config.size * 2;  // elongated body
+        const width = config.size; // thin body
+        const segments = 3;               // number of body segments
+
+        // Phase offset per boid for natural wiggle
+        const t = performance.now() * 0.001 + this.noiseOffsetX;
+
+        // Draw wiggling, flexing sardine body
+        ctx.beginPath();
+        for (let i = 0; i <= segments; i++) {
+          const x = (i / segments - 0.5) * length;
+          const yOffset = Math.sin(i / segments * Math.PI * 2 + t) * width * 0.25;
+
+          // Small local rotation of the body segment
+          const segmentAngle = Math.sin(i / segments * Math.PI * 2 + t) * 0.1; // +/- ~0.1 rad
+          const yRotated = yOffset * Math.cos(segmentAngle);
+          const xRotated = x + yOffset * Math.sin(segmentAngle);
+
+          if (i === 0) ctx.moveTo(xRotated, yRotated);
+          else ctx.lineTo(xRotated, yRotated);
+        }
+        for (let i = segments; i >= 0; i--) {
+          const x = (i / segments - 0.5) * length;
+          const yOffset = -Math.sin(i / segments * Math.PI * 2 + t) * width * 0.25;
+          const segmentAngle = Math.sin(i / segments * Math.PI * 2 + t) * 0.1;
+          const yRotated = yOffset * Math.cos(segmentAngle);
+          const xRotated = x + yOffset * Math.sin(segmentAngle);
+          ctx.lineTo(xRotated, yRotated);
+        }
+        ctx.closePath();
+        let color_mode = localStorage.getItem("theme") || "light";
+        ctx.fillStyle = color_mode === "dark" ? "rgba(255, 255, 255, 0.9)" : "rgba(100, 100, 155, 0.9)"; // silvery body
+        ctx.fill();
+
+
+
+        ctx.restore();
+      }
+
+    }
+
+    // ======================
+    // INIT BOIDS
+    // ======================
+    const boids = Array.from({ length: config.count }, () => new Boid());
+
+    let boidsActive = false;
+    let boidsAlpha = 0;
+    const fadeSpeed = 0.01;
+
+
+    toggleBtn.addEventListener('click', () => {
+      boidsActive = !boidsActive;
+      toggleBtn.innerHTML = boidsActive ? '<div style="font-size:20px;"">&#128526;</div>' : '<div>Bored?</div><div style="margin-top: 8px;">Chase down some bugs!</div>';
+    });
+
+
+
+    // ====================================================
+    // ANIMATION LOOP
+    // ====================================================
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      if (boidsActive && boidsAlpha < 1) boidsAlpha += fadeSpeed;
+      if (!boidsActive && boidsAlpha > 0) boidsAlpha -= fadeSpeed;
+      boidsAlpha = Math.min(Math.max(boidsAlpha, 0), 1);
+
+      const fullyOff = !boidsActive && boidsAlpha === 0;
+
+      if (!fullyOff) {
+        ctx.save();
+        ctx.globalAlpha = boidsAlpha;
+
+        for (const b of boids) b.behave(boids, predator);
+        for (const b of boids) b.update();
+        for (const b of boids) b.draw();
+
+        ctx.restore();
+      }
+
+      if (fullyOff) {
+        setTimeout(() => requestAnimationFrame(animate), 200);
+      } else {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    animate();
+  </script>
+
+
+</body>
+
+</html>
